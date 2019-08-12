@@ -6,7 +6,7 @@ RUN yum -y update && \
     yum  -y install wget && \
     wget https://github.com/Qihoo360/pika/archive/v2.3.6.tar.gz
 
-ADD v2.3.6.tar.gz /opt
+RUN mv v2.3.6.tar.gz /opt
 
 RUN tar -zxf /opt/v2.3.6.tar.gz
 
