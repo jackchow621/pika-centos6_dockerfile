@@ -4,11 +4,11 @@ MAINTAINER jackchow "jack_chow621@sina.com"
 
 RUN yum -y update && \
     yum  -y install wget && \
-    wget https://github.com/Qihoo360/pika/releases/download/v2.3.6/pika-linux-x86_64-v2.3.6.tar.bz2
+    wget https://github.com/Qihoo360/pika/archive/v2.3.6.tar.gz
 
-ADD pika-linux-x86_64-v2.3.6.tar.bz2 /opt
+ADD v2.3.6.tar.gz /opt
 
-RUN mv /opt/pika-linux-x86_64-v2.3.6 /opt/pika-v2.3.6
+RUN tar -zxf /opt/v2.3.6.tar.gz
 
 ENV PIKA  /opt/pika-v2.3.6
 ENV PATH ${PIKA}/bin:${PATH}
